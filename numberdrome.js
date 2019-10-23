@@ -15,7 +15,9 @@ class Numberdrome {
     if (isNaN(parseInt(n, 10))) {
       throw new Error("n is NaN");
     } else {
-      this.list.splice(this.list.indexOf(n), 1);
+      this.list.filter(function(el) {
+        el === false;
+      })
     }
   }
 
@@ -35,9 +37,7 @@ class Numberdrome {
     if (this.list.length === 0) {
       throw new Error('List is empty');
     } else {
-      return this.list.reduce(function(a, b) {
-        return Math.min(a, b);
-      });
+        return Math.min(...this.list);
     }
   }
 
@@ -45,9 +45,7 @@ class Numberdrome {
     if (this.list.length === 0) {
       throw new Error('List is empty');
     } else {
-      return this.list.reduce(function(a, b) {
-        return Math.max(a, b);
-      });
+        return Math.max(...this.list);
     }
   }
 }
