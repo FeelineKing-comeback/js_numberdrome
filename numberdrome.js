@@ -15,26 +15,26 @@ class Numberdrome {
     if (isNaN(parseInt(n, 10))) {
       throw new Error("n is NaN");
     } else {
-      this.list.filter(function(el) {
+      this.list.filter(el => {
         el === false;
       })
     }
   }
 
   sum() {
-    return this.list.reduce(function(a, b) {
+    return this.list.reduce((a, b) => {
       return a + b;
     }, 0);
   }
 
   product() {
-    return this.list.reduce(function(a, b) {
+    return this.list.reduce((a, b) => {
       return a * b;
     }, 1);
   }
 
   min() {
-    if (this.list.length === 0) {
+    if (!this.list.length) {
       throw new Error('List is empty');
     } else {
         return Math.min(...this.list);
@@ -42,7 +42,7 @@ class Numberdrome {
   }
 
   max() {
-    if (this.list.length === 0) {
+    if (!this.list.length) {
       throw new Error('List is empty');
     } else {
         return Math.max(...this.list);
